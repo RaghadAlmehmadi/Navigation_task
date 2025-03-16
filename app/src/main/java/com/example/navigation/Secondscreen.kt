@@ -19,34 +19,22 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Secondscreen(navController: NavController) {
-                Scaffold(
-                    modifier = Modifier.fillMaxSize(),
-                    topBar = {
-                        TopAppBar(
-                            title = { Text(text = "Second Screen") },
-                            navigationIcon = {
-                                IconButton(onClick = { navController.popBackStack() }) {
-                                    Icon(
-                                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                        contentDescription = "Back Button"
-                                    )
-                                }
-                            }
-                        )
-                    }
-                ) { innerPadding ->
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Button(onClick = { navController.navigate("third_screen") }) {
-                            Text(text = "Go to Third Screen")
-                        }
-                    }
-                }
-            }
+fun Secondscreen(navController: NavController, enteredText: String) {
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(text = "Saved Text: $enteredText")
 
+            Button(onClick = { navController.navigate("third_screen") }) {
+                Text(text = "Go to Third Screen")
+            }
+        }
+    }
+}

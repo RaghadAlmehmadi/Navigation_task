@@ -22,7 +22,6 @@ import androidx.navigation.NavController
 fun Firstscreen(navController: NavController) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-
     ) { innerPadding ->
         Column(
             modifier = Modifier
@@ -40,6 +39,7 @@ fun Firstscreen(navController: NavController) {
             ) {
                 Text(text = "Second Screen")
             }
+
         }
     }
 }

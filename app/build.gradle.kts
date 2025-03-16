@@ -59,5 +59,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.navigation.compose)
-    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation (libs.kotlinx.serialization.json)
 }
